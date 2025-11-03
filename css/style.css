@@ -217,9 +217,26 @@ main {
 }
 
 .skin-icon {
-  font-size: 4rem;
-  text-align: center;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skin-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.skin-card:hover .skin-icon img {
+  transform: scale(1.1);
 }
 
 .skin-name {
