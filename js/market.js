@@ -1,5 +1,89 @@
 // CS2 Skin Trading Simulator - Market System
 
+// Skins data
+const SKINS_DATA = [
+  {
+    id: 1,
+    name: "AK-47 | Redline",
+    category: "rifle",
+    basePrice: 250,
+    rarity: "rare",
+    icon: "🔫"
+  },
+  {
+    id: 2,
+    name: "AWP | Asiimov",
+    category: "sniper",
+    basePrice: 850,
+    rarity: "epic",
+    icon: "🎯"
+  },
+  {
+    id: 3,
+    name: "M4A4 | Howl",
+    category: "rifle",
+    basePrice: 3500,
+    rarity: "legendary",
+    icon: "🔥"
+  },
+  {
+    id: 4,
+    name: "Desert Eagle | Blaze",
+    category: "pistol",
+    basePrice: 450,
+    rarity: "rare",
+    icon: "💥"
+  },
+  {
+    id: 5,
+    name: "Karambit | Fade",
+    category: "knife",
+    basePrice: 5000,
+    rarity: "legendary",
+    icon: "🗡️"
+  },
+  {
+    id: 6,
+    name: "Glock-18 | Water Elemental",
+    category: "pistol",
+    basePrice: 120,
+    rarity: "common",
+    icon: "💧"
+  },
+  {
+    id: 7,
+    name: "AK-47 | Fire Serpent",
+    category: "rifle",
+    basePrice: 2800,
+    rarity: "legendary",
+    icon: "🐍"
+  },
+  {
+    id: 8,
+    name: "AWP | Dragon Lore",
+    category: "sniper",
+    basePrice: 8500,
+    rarity: "legendary",
+    icon: "🐉"
+  },
+  {
+    id: 9,
+    name: "Butterfly Knife | Crimson Web",
+    category: "knife",
+    basePrice: 4200,
+    rarity: "epic",
+    icon: "🦋"
+  },
+  {
+    id: 10,
+    name: "USP-S | Kill Confirmed",
+    category: "pistol",
+    basePrice: 380,
+    rarity: "rare",
+    icon: "⚡"
+  }
+];
+
 const Market = {
   skins: [],
   currentPrices: {},
@@ -9,25 +93,19 @@ const Market = {
   intervalId: null,
   updateInterval: 5000, // 5 seconds
 
-  // Load skins data from JSON
-  async loadSkins() {
-    try {
-      const response = await fetch('data/skins.json');
-      this.skins = await response.json();
+  // Load skins data
+  loadSkins() {
+    this.skins = SKINS_DATA;
 
-      // Initialize prices and history
-      this.skins.forEach(skin => {
-        this.currentPrices[skin.id] = skin.basePrice;
-        this.priceHistory[skin.id] = [skin.basePrice];
-        this.priceChangePercent[skin.id] = 0;
-      });
+    // Initialize prices and history
+    this.skins.forEach(skin => {
+      this.currentPrices[skin.id] = skin.basePrice;
+      this.priceHistory[skin.id] = [skin.basePrice];
+      this.priceChangePercent[skin.id] = 0;
+    });
 
-      console.log('Skins loaded:', this.skins.length);
-      return this.skins;
-    } catch (error) {
-      console.error('Failed to load skins:', error);
-      return [];
-    }
+    console.log('Skins loaded:', this.skins.length);
+    return this.skins;
   },
 
   // Get all skins

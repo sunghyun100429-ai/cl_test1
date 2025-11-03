@@ -209,7 +209,7 @@ const UI = {
 };
 
 // Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', async () => {
-  await Market.loadSkins();
+document.addEventListener('DOMContentLoaded', () => {
+  Market.loadSkins();
   UI.init();
 });
