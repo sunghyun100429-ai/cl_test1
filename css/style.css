@@ -1,0 +1,418 @@
+/* CS2 Skin Trading Simulator - Dark Theme */
+
+:root {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-card: #0f1624;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent-green: #0eff00;
+  --accent-red: #ff3366;
+  --accent-blue: #00d4ff;
+  --border-color: #2a2a3e;
+
+  --rarity-common: #b0c3d9;
+  --rarity-rare: #5e98d9;
+  --rarity-epic: #8847ff;
+  --rarity-legendary: #d32ce6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid var(--accent-green);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Stats Bar */
+.stats-bar {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  background: var(--bg-card);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--accent-green);
+}
+
+.stat-value.positive {
+  color: var(--accent-green);
+}
+
+.stat-value.negative {
+  color: var(--accent-red);
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+button {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+button:hover {
+  background: var(--accent-green);
+  color: var(--bg-primary);
+  border-color: var(--accent-green);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(14, 255, 0, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button.active {
+  background: var(--accent-green);
+  color: var(--bg-primary);
+  border-color: var(--accent-green);
+}
+
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+button:disabled:hover {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  transform: none;
+  box-shadow: none;
+}
+
+#resetGame {
+  border-color: var(--accent-red);
+}
+
+#resetGame:hover {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+  box-shadow: 0 4px 12px rgba(255, 51, 102, 0.3);
+}
+
+/* Main Content */
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Market List */
+.market-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Skin Card */
+.skin-card {
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 15px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skin-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--rarity-common);
+  transition: all 0.3s ease;
+}
+
+.skin-card[data-rarity="rare"]::before {
+  background: var(--rarity-rare);
+}
+
+.skin-card[data-rarity="epic"]::before {
+  background: var(--rarity-epic);
+}
+
+.skin-card[data-rarity="legendary"]::before {
+  background: var(--rarity-legendary);
+}
+
+.skin-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(14, 255, 0, 0.2);
+  border-color: var(--accent-green);
+}
+
+.skin-icon {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.skin-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.skin-meta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.category {
+  background: var(--bg-card);
+  padding: 0.25rem 0.75rem;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.rarity {
+  padding: 0.25rem 0.75rem;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.rarity.common {
+  background: var(--rarity-common);
+  color: var(--bg-primary);
+}
+
+.rarity.rare {
+  background: var(--rarity-rare);
+  color: var(--text-primary);
+}
+
+.rarity.epic {
+  background: var(--rarity-epic);
+  color: var(--text-primary);
+}
+
+.rarity.legendary {
+  background: var(--rarity-legendary);
+  color: var(--text-primary);
+}
+
+.skin-price {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 1rem 0;
+  color: var(--accent-green);
+}
+
+.price-change {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  animation: priceFlash 0.5s ease;
+}
+
+@keyframes priceFlash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.price-change.positive {
+  color: var(--accent-green);
+}
+
+.price-change.negative {
+  color: var(--accent-red);
+}
+
+.skin-owned {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.skin-owned strong {
+  color: var(--accent-blue);
+  font-size: 1.2rem;
+}
+
+/* Skin Actions */
+.skin-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-buy, .btn-sell {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.btn-buy {
+  border-color: var(--accent-green);
+}
+
+.btn-buy:hover:not(:disabled) {
+  background: var(--accent-green);
+  color: var(--bg-primary);
+}
+
+.btn-sell {
+  border-color: var(--accent-red);
+}
+
+.btn-sell:hover:not(:disabled) {
+  background: var(--accent-red);
+  color: var(--text-primary);
+}
+
+/* Footer */
+footer {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--text-secondary);
+  margin-top: 3rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Notifications */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateX(400px);
+  transition: all 0.3s ease;
+}
+
+.notification.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.notification.success {
+  border-color: var(--accent-green);
+  background: linear-gradient(135deg, var(--bg-secondary), rgba(14, 255, 0, 0.1));
+}
+
+.notification.error {
+  border-color: var(--accent-red);
+  background: linear-gradient(135deg, var(--bg-secondary), rgba(255, 51, 102, 0.1));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .stats-bar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .market-list {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}

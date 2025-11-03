@@ -1,107 +1,61 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>카운터 프로그램</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 30px;
-        }
-
-        #counter {
-            font-size: 72px;
-            font-weight: bold;
-            color: #667eea;
-            margin: 30px 0;
-            min-width: 150px;
-        }
-
-        button {
-            font-size: 18px;
-            padding: 15px 40px;
-            margin: 10px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: bold;
-        }
-
-        #incrementBtn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        #incrementBtn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        #incrementBtn:active {
-            transform: translateY(0);
-        }
-
-        #resetBtn {
-            background: #f0f0f0;
-            color: #666;
-        }
-
-        #resetBtn:hover {
-            background: #e0e0e0;
-            transform: translateY(-2px);
-        }
-
-        #resetBtn:active {
-            transform: translateY(0);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS2 Skin Trading Simulator</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>카운터 프로그램</h1>
-        <div id="counter">0</div>
-        <button id="incrementBtn">+1 증가</button>
-        <button id="resetBtn">초기화</button>
+  <header>
+    <div class="header-content">
+      <h1>🎮 CS2 Skin Trading Simulator</h1>
+
+      <!-- Stats Bar -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-label">Cash</div>
+          <div class="stat-value" id="cash">$10,000.00</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Total Value</div>
+          <div class="stat-value" id="totalValue">$10,000.00</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Profit/Loss</div>
+          <div class="stat-value" id="profit">+0.0%</div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <button id="toggleMarket">▶️ Start Market</button>
+        <button id="resetGame">🔄 Reset Game</button>
+      </div>
     </div>
+  </header>
 
-    <script>
-        let count = 0;
-        const counterDisplay = document.getElementById('counter');
-        const incrementBtn = document.getElementById('incrementBtn');
-        const resetBtn = document.getElementById('resetBtn');
+  <main>
+    <!-- Market List -->
+    <section class="market-list" id="marketList">
+      <!-- Skin cards will be dynamically generated here -->
+    </section>
+  </main>
 
-        // 버튼 클릭시 숫자 증가
-        incrementBtn.addEventListener('click', function() {
-            count++;
-            counterDisplay.textContent = count;
-        });
+  <footer>
+    <div class="footer-content">
+      <div>
+        Last Update: <span id="lastUpdate">--:--:--</span>
+      </div>
+      <div>
+        CS2 Skin Trading Simulator v1.0
+      </div>
+    </div>
+  </footer>
 
-        // 초기화 버튼
-        resetBtn.addEventListener('click', function() {
-            count = 0;
-            counterDisplay.textContent = count;
-        });
-    </script>
+  <!-- Scripts -->
+  <script src="js/game.js"></script>
+  <script src="js/market.js"></script>
+  <script src="js/ui.js"></script>
 </body>
 </html>
