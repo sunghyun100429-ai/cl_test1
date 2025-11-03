@@ -69,9 +69,7 @@ const UI = {
       const canSell = owned > 0;
 
       card.innerHTML = `
-        <div class="skin-icon">
-          <img src="${skin.image}" alt="${skin.name}" loading="lazy">
-        </div>
+        <div class="skin-icon">${skin.icon}</div>
         <div class="skin-name">${skin.name}</div>
         <div class="skin-meta">
           <span class="category">${skin.category}</span>

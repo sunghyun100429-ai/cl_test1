@@ -8,7 +8,7 @@ const SKINS_DATA = [
     category: "rifle",
     basePrice: 250,
     rarity: "rare",
-    image: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJemkV09-5lpKKqPrxN7LEmyVQ7MEpiLuSrYmnjQO3-UdsZGHyd4_Bd1RvNQ7T_VDrw-_ng5Pu75iY1zI97bhLDA6V"
+    icon: "🔫"
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const SKINS_DATA = [
     category: "sniper",
     basePrice: 850,
     rarity: "epic",
-    image: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAR17PLfYQJD_9W7m5a0mvLwOq7c2GoFu5Ry0r_F94623ATs_xVtNW6gd4-SegI4MliF_FK5w-7u1pa5ot2XnjtM_1tT"
+    icon: "🎯"
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const SKINS_DATA = [
     category: "rifle",
     basePrice: 3500,
     rarity: "legendary",
-    image: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alDLjQhH9U5Pp9g-7J4bP5iUazrl07ZT_2cYPBdVI_YFrS-gO9x7q6hpPo6pTNzSNq63J37iuMgVXp1h2FRtJC"
+    icon: "🔥"
   },
   {
     id: 4,
@@ -32,7 +32,7 @@ const SKINS_DATA = [
     category: "pistol",
     basePrice: 450,
     rarity: "rare",
-    image: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7PLZTjlH_9mkgIWKkPvLO7zQhH9U5Pp9g-7J4bP5iUazrl1kYj3yLdSXIwA_NQrR_gXrk-nsh8C66prBmCNquyZ3tHvfgVXp1kZOYeQ3"
+    icon: "💥"
   },
   {
     id: 5,
@@ -40,7 +40,7 @@ const SKINS_DATA = [
     category: "knife",
     basePrice: 5000,
     rarity: "legendary",
-    image: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf2PLacDBA5ciJlY20k_jkI7fUhFRB4MZOhuDG_Zi72gO3-UBrZzyhcY-QdlRrYQ3Y_QS2xO-6hpDpupXAmCQyvSQjs3vfzELhiU5SLrs4B5EbGbU"
+    icon: "🗡️"
   },
   {
     id: 6,
@@ -48,7 +48,7 @@ const SKINS_DATA = [
     category: "pistol",
     basePrice: 120,
     rarity: "common",
-    image: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0v73dShD4N6_mIWZqP76DLfYkWNFppdy0-qS8NiliwXmrRJvZjvwLYHBcwFoZArR-VO5kOzxxcjr3vu5XQ"
+    icon: "💧"
   },
   {
     id: 7,
@@ -56,7 +56,7 @@ const SKINS_DATA = [
     category: "rifle",
     basePrice: 2800,
     rarity: "legendary",
-    image: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJemkV08y5nY6fqPP9ILrUklRd4cJ5nqeQpNz0jgC2qEU9MGHwdY-delQ3YVCDqQe6wOjvjJC76ZrBmCYyuCR34HjD30vgF3VEn2Y"
+    icon: "🐍"
   },
   {
     id: 8,
@@ -64,7 +64,7 @@ const SKINS_DATA = [
     category: "sniper",
     basePrice: 8500,
     rarity: "legendary",
-    image: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAR17PLfYQJD_9W7m5a0mvLwOq7cqWdQ-sJ0teXI8oThxlLkqBJsYTz1doKXcQM_NQ6FqFPqwry5h5O96pnLyHM37yF37X7D30vgd4mKZV0"
+    icon: "🐉"
   },
   {
     id: 9,
@@ -72,7 +72,7 @@ const SKINS_DATA = [
     category: "knife",
     basePrice: 4200,
     rarity: "epic",
-    image: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf0ebcZThQ6tCvq4GGqOP1Pb7dhFJW-fp8j-3I4IG7jVLs_UtsZ23wJI-VdFBvYw3V-1HskOjnhJDo6oOJlyWSwC3x2A"
+    icon: "🦋"
   },
   {
     id: 10,
@@ -80,7 +80,7 @@ const SKINS_DATA = [
     category: "pistol",
     basePrice: 380,
     rarity: "rare",
-    image: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ09-jq5WYh8jiPLfFl2xU18h0juDU-MKt3ALs-Us9Nj30coPEe1Q9ZFzW8lK2xefxxcjr2uObLNA"
+    icon: "⚡"
   }
 ];
 
